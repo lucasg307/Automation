@@ -89,7 +89,7 @@ def extract(article, keyword, infos, i):
 
     try:
         content = requests.get(article['thumbnail']['url']).content
-        with open('output/imgs/'+picture_file_name, 'wb') as handler:
+        with open('output/'+picture_file_name, 'wb') as handler:
             handler.write(content)
     except Exception:
         logging.error('Download image error: '+traceback.format_exc().splitlines()[-1])
